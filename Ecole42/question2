@@ -1,0 +1,7 @@
+-- SQL request(s) below
+SELECT agent.NAME, count(agent.NAME) as SCORE 
+FROM agent, mutant 
+where mutant.RECRUITERID=agent.AGENTID 
+group by agent.NAME 
+order by SCORE desc
+limit 10
